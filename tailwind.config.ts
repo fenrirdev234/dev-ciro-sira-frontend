@@ -16,9 +16,13 @@ export default {
 				"proyect-white2": "#FEFDF9",
 				"proyect-grey": "#8C8C8C",
 				"proyect-grey2": "#F6F6F6",
+				"proyect-grey3": "#595959",
 				"proyect-red": "#FF2F2F",
 				"proyect-purple": "#B97BE6",
 				"proyect-purple2": "#9C73F7",
+			},
+			boxShadow: {
+				"proyect-shadow": "10px 10px rgba(0, 0, 0)",
 			},
 		},
 	},
