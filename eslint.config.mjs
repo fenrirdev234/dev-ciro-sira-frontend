@@ -13,7 +13,6 @@ const eslintConfig = [
 	...compat.extends(
 		"next/core-web-vitals",
 		"next/typescript",
-		"eslint-plugin-simple-import-sort",
 		"eslint-plugin-prettier/recommended",
 	),
 ];
