@@ -2,12 +2,11 @@ import Link from "next/link";
 import { CardInfo } from "./CardInfo";
 
 interface CardProps {
-	isPrincipal: boolean;
-	tag: string;
 	title: string;
+	tag: string;
 	readingTime: string;
-
 	backgroundImage: string;
+	isPrincipal: boolean;
 	postLink: string;
 }
 export const Card = ({

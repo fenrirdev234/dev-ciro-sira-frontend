@@ -18,6 +18,7 @@ const meta = {
 		tag: "Diversity & Inclusion",
 		readingTime: "6 mins",
 		backgroundImage: "/images/exampleImage.webp",
+		postLink: "/",
 	},
 	decorators: [
 		(Story) => (
