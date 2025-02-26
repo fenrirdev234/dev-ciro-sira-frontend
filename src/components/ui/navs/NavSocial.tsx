@@ -10,7 +10,7 @@ const social = [
 
 export const NavSocial = () => {
 	return (
-		<nav>
+		<div>
 			<ul className='flex gap-6'>
 				{social.map((item, index) => (
 					<li key={index} className='transition-colors hover:text-proyect-green'>
@@ -18,6 +18,6 @@ export const NavSocial = () => {
 					</li>
 				))}
 			</ul>
-		</nav>
+		</div>
 	);
 };

@@ -24,7 +24,22 @@ export default {
 			boxShadow: {
 				"proyect-shadow": "10px 10px rgba(0, 0, 0)",
 			},
+			typography: {
+				quoteless: {
+					css: {
+						"blockquote p:first-of-type::before": { content: "none" },
+						"blockquote p:first-of-type::after": { content: "none" },
+						"blockquote p:first-of-type": {
+							fontStyle: "normal",
+							padding: "0px !important",
+							margin: "0px !important",
+							fontWeight: "700 !important",
+							fontSize: "21px",
+						},
+					},
+				},
+			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
