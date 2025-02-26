@@ -5,6 +5,7 @@ import { LittleLogo } from "@/components/ui/icons/LittleLogo";
 
 import { TextWithArrowAnimation } from "@/components/ui/text/TextWithArrowAnimation";
 import useModalStore from "@/stores/modalStore";
+import Link from "next/link";
 
 interface IHeader {
 	isSticky: boolean;
@@ -16,14 +17,14 @@ export const Header = ({ isSticky }: IHeader) => {
 		<header
 			className={`flex justify-between bg-proyect-black px-6 py-4 opacity-80 backdrop-blur-sm lg:px-16 ${isSticky ? "sticky top-0 z-40" : ""} `}
 		>
-			<div>
+			<Link href={"/"}>
 				<div className='lg:hidden'>
 					<LittleLogo />
 				</div>
 				<div className='hidden lg:flex'>
 					<BigLogo />
 				</div>
-			</div>
+			</Link>
 			<button
 				onClick={() => {
 					toggleModal();
