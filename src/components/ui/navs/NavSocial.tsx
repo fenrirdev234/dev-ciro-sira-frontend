@@ -14,7 +14,9 @@ export const NavSocial = () => {
 			<ul className='flex gap-6'>
 				{social.map((item, index) => (
 					<li key={index} className='transition-colors hover:text-proyect-green'>
-						<a href={item.url}>{item.logo}</a>
+						<a href={item.url} aria-label={`go to ${item.name} site`}>
+							{item.logo}
+						</a>
 					</li>
 				))}
 			</ul>
