@@ -19,7 +19,7 @@ const meta = {
 		readingTime: "6 mins",
 		author: {
 			name: "Natsu Kim",
-			image: "/images/authorImg.webp",
+			photo: { url: "/images/authorImg.webp", alt: "" },
 		},
 	},
 } satisfies Meta<typeof CardInfoBlog>;

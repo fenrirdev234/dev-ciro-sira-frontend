@@ -1,31 +1,27 @@
+import { IPost } from "@/models/post.model";
 import { PaperIcon } from "../icons/PaperIcon";
 import { WaveIcon } from "../icons/WaveIcon";
+import Image from "next/image";
 
-interface ICardInfoBlogProps {
-	title: string;
-	readingTime: string;
-	author: {
-		name: string;
-		image: string;
-	};
-}
+type CardInfoBlogType = Pick<IPost, "title" | "readingTime" | "author">;
 
 export const CardInfoBlog = ({
 	title,
 	readingTime,
 	author,
-}: ICardInfoBlogProps) => {
+}: CardInfoBlogType) => {
 	return (
 		<div>
 			<div
 				className={`flex w-fit items-center gap-4 bg-proyect-white px-4 pt-4 lg:px-6 lg:pt-6`}
 			>
 				<div className='flex items-center gap-2'>
-					<div
-						className='text-proyect-grey3 h-10 w-10 rounded-full bg-cover bg-no-repeat'
-						style={{
-							backgroundImage: `url(${author.image})`,
-						}}
+					<Image
+						src={author.photo.url}
+						alt={author.photo.alt}
+						width={40}
+						height={40}
+						className='h-10 w-10 rounded-full bg-cover bg-no-repeat text-proyect-grey3'
 					/>
 					<p>By {author.name}</p>
 				</div>
@@ -39,7 +35,7 @@ export const CardInfoBlog = ({
 				<div className='flex pt-2.5 lg:pt-4'>
 					<div className='flex items-center gap-2.5'>
 						<PaperIcon />
-						<p className='text-proyect-grey3 font-normal'>{readingTime} read</p>
+						<p className='font-normal text-proyect-grey3'>{readingTime} read</p>
 					</div>
 				</div>
 			</div>

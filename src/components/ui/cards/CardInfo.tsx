@@ -1,26 +1,24 @@
 import { TextWithArrow } from "../text/TextWithArrow";
 import { PaperIcon } from "../icons/PaperIcon";
+import { IPost } from "@/models/post.model";
 
-interface ICardInfo {
+type CardType = Pick<IPost, "title" | "readingTime" | "category"> & {
 	isPrincipal: boolean;
-	tag: string;
-	title: string;
-	readingTime: string;
-}
+};
 
 export const CardInfo = ({
 	isPrincipal,
 	title,
-	tag,
+	category,
 	readingTime,
-}: ICardInfo) => {
+}: CardType) => {
 	return (
-		<div>
+		<div className='w-full'>
 			<div
 				className={`inline-block px-6 pt-6 ${isPrincipal ? "bg-proyect-black" : "bg-proyect-white"}`}
 			>
 				<p className='rounded-full bg-proyect-green px-3 py-1 text-sm font-semibold text-proyect-black'>
-					{tag}
+					{category}
 				</p>
 			</div>
 			<div

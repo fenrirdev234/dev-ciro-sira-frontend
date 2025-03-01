@@ -11,7 +11,7 @@ export const TextWithArrowLeftAnimation = ({ label }: TextWithArrowLeft) => {
 	return (
 		<motion.p
 			whileHover='whileHover'
-			className='flex items-center gap-2 text-sm font-bold text-proyect-white'
+			className='flex w-fit items-center gap-2 text-sm font-bold text-proyect-white'
 		>
 			<span>
 				<LeftArrowIcon />

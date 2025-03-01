@@ -7,35 +7,34 @@ import { TextWithArrowAnimation } from "@/components/ui/text/TextWithArrowAnimat
 import useModalStore from "@/stores/modalStore";
 import Link from "next/link";
 
-interface IHeader {
-	isSticky: boolean;
-}
-export const Header = ({ isSticky }: IHeader) => {
+export const Header = () => {
 	const { toggleModal } = useModalStore();
 
 	return (
 		<header
-			className={`flex justify-between bg-proyect-black px-6 py-4 opacity-80 backdrop-blur-sm lg:px-16 ${isSticky ? "sticky top-0 z-40" : ""} `}
+			className={`fixed top-0 z-40 flex w-full justify-center bg-proyect-black opacity-80 backdrop-blur-sm`}
 		>
-			<Link href={"/"}>
-				<div className='lg:hidden'>
-					<LittleLogo />
-				</div>
-				<div className='hidden lg:flex'>
-					<BigLogo />
-				</div>
-			</Link>
-			<button
-				onClick={() => {
-					toggleModal();
-				}}
-			>
-				<TextWithArrowAnimation
-					isGreen={true}
-					isBlackText={false}
-					label='New post'
-				/>
-			</button>
+			<div className='flex w-full max-w-[1440px] justify-between px-6 py-4 lg:px-16'>
+				<Link href={"/"} aria-label={"go to home"}>
+					<div className='lg:hidden'>
+						<LittleLogo />
+					</div>
+					<div className='hidden lg:flex'>
+						<BigLogo />
+					</div>
+				</Link>
+				<button
+					onClick={() => {
+						toggleModal();
+					}}
+				>
+					<TextWithArrowAnimation
+						isGreen={true}
+						isBlackText={false}
+						label='New post'
+					/>
+				</button>
+			</div>
 		</header>
 	);
 };

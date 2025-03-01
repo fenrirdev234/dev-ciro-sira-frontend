@@ -15,12 +15,14 @@ const meta = {
 
 	args: {
 		title: "Your Kid May Already Be Watching AI-Generated Videos on YouTube",
-		tag: "Diversity & Inclusion",
 		readingTime: "6 mins",
-		backgroundImage: "/images/exampleImage.webp",
 		author: {
 			name: "Natsu Kim",
-			image: "/images/authorImg.webp",
+			photo: { url: "/images/authorImg.webp", alt: "" },
+		},
+		postImage: {
+			url: "/images/exampleImage.webp",
+			alt: "Your Kid May Already Be Watching AI-Generated Videos on YouTube",
 		},
 	},
 	decorators: [
@@ -37,13 +39,5 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Principal: Story = {
-	args: {
-		isPrincipal: true,
-	},
-};
-
-export const Secondary: Story = {
-	args: {
-		isPrincipal: false,
-	},
+	args: {},
 };

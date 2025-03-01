@@ -15,10 +15,13 @@ const meta = {
 
 	args: {
 		title: "Your Kid May Already Be Watching AI-Generated Videos on YouTube",
-		tag: "Diversity & Inclusion",
+		category: "Diversity & Inclusion",
 		readingTime: "6 mins",
-		backgroundImage: "/images/exampleImage.webp",
-		postLink: "/",
+		postImage: {
+			url: "/images/exampleImage.webp",
+			alt: "Your Kid May Already Be Watching AI-Generated Videos on YouTube",
+		},
+		postId: "/",
 	},
 	decorators: [
 		(Story) => (

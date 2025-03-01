@@ -16,7 +16,7 @@ const meta = {
 
 	args: {
 		title: "Your Kid May Already Be Watching AI-Generated Videos on YouTube",
-		tag: "Diversity & Inclusion",
+		category: "Diversity & Inclusion",
 		readingTime: "6 mins",
 	},
 } satisfies Meta<typeof CardInfo>;

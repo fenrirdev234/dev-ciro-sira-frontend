@@ -1,35 +1,33 @@
 import Link from "next/link";
 import { CardInfo } from "./CardInfo";
+import { IPost } from "@/models/post.model";
 
-interface CardProps {
-	title: string;
-	tag: string;
-	readingTime: string;
-	backgroundImage: string;
-	isPrincipal: boolean;
-	postLink: string;
-}
+type CardType = Pick<
+	IPost,
+	"title" | "readingTime" | "postImage" | "category" | "postId" | "postImage"
+> & { isPrincipal: boolean };
+
 export const Card = ({
 	title,
-	tag,
+	category,
 	readingTime,
-	backgroundImage,
+	postImage,
 	isPrincipal,
-	postLink,
-}: CardProps) => {
+	postId,
+}: CardType) => {
 	return (
-		<Link href={`/${postLink}`}>
+		<Link href={`/${postId}`} className='flex-1'>
 			<article
-				className={`flex flex-1 items-end bg-cover bg-no-repeat p-6`}
+				className={`flex h-full w-full items-end bg-cover bg-center bg-no-repeat p-6`}
 				style={{
-					backgroundImage: `url(${backgroundImage})`,
+					backgroundImage: `url(${postImage.url})`,
 				}}
 			>
 				<CardInfo
 					isPrincipal={isPrincipal}
 					title={title}
 					readingTime={readingTime}
-					tag={tag}
+					category={category}
 				/>
 			</article>
 		</Link>

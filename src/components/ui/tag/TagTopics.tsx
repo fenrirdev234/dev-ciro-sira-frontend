@@ -20,10 +20,11 @@ export const TagTopics = ({
 			<motion.button
 				{...props}
 				layout
+				whileTap={{ scale: 0.95 }}
 				className={`text-nowrap rounded-full px-4 py-2 text-base font-normal ${
 					isActive
 						? "bg-proyect-green"
-						: "outline-solid bg-inherit text-proyect-grey outline outline-proyect-grey"
+						: "outline-solid bg-inherit text-proyect-grey outline outline-1 outline-proyect-grey"
 				} `}
 				onTap={() => setIsActive(!isActive)}
 			>
