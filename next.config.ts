@@ -3,6 +3,20 @@ import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
 	/* config options here */
+	crossOrigin: "anonymous",
+	images: {
+		unoptimized: true,
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "*", // Allow images from all domains
+			},
+			{
+				protocol: "http",
+				hostname: "*", // Allow images from all domains
+			},
+		],
+	},
 };
 
 const withMDX = createMDX({
