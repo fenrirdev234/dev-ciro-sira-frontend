@@ -23,6 +23,7 @@ export default {
 			},
 			boxShadow: {
 				"proyect-shadow": "10px 10px rgba(0, 0, 0)",
+				"proyect-blur-purple": "0px 0px 8px 0px #B97BE6",
 			},
 			typography: {
 				quoteless: {
