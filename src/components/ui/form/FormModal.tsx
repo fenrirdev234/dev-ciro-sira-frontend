@@ -88,7 +88,10 @@ export const FormModal = () => {
 
 	const onError = (error: FieldErrors<PostFormType>) => {
 		error.title && toast.error(error.title?.message);
-		error.image && toast.error(error.image?.message);
+		error.image &&
+			toast.error(
+				typeof error.image?.message === "string" && error.image?.message,
+			);
 	};
 
 	return (
