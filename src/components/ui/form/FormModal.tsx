@@ -71,7 +71,8 @@ export const FormModal = () => {
 				onUploadProgress: (data) => {
 					//Set the progress value to show the progress bar
 
-					setUploadProgress(Math.round((100 * data.loaded) / data.total));
+					data.total &&
+						setUploadProgress(Math.round((100 * data.loaded) / data.total));
 				},
 				signal: AbortFormFetch.signal,
 			});
