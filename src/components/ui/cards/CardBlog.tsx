@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TextWithArrowLeftAnimation } from "../text/TextWithArrowLeftAnimation";
 import { CardInfoBlog } from "./CardInfoBlog";
 import { IPost } from "@/models/post.model";
+import Image from "next/image";
 
 type CardBlogType = Pick<
 	IPost,
@@ -17,12 +18,15 @@ export const CardBlog = ({
 }: CardBlogType) => {
 	return (
 		<section
-			className={`flex h-full w-full items-end bg-cover bg-center bg-no-repeat px-6 pb-10 lg:pb-36 lg:pl-16`}
-			style={{
-				backgroundImage: `url(${postImage.url})`,
-			}}
+			className={`relative flex h-full w-full items-end px-6 pb-10 lg:pb-36 lg:pl-16`}
 		>
-			<div className='flex flex-col gap-6'>
+			<Image
+				src={postImage.url}
+				alt={postImage.alt}
+				fill={true}
+				className='object-cover object-center'
+			/>
+			<div className='z-10 flex flex-col gap-6'>
 				<div className='w-fit'>
 					<Link href='/'>
 						<TextWithArrowLeftAnimation label={"Blog"} />

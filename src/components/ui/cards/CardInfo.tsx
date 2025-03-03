@@ -13,7 +13,7 @@ export const CardInfo = ({
 	readingTime,
 }: CardType) => {
 	return (
-		<div className='w-full'>
+		<div className='z-10 w-full'>
 			<div
 				className={`inline-block px-6 pt-6 ${isPrincipal ? "bg-proyect-black" : "bg-proyect-white"}`}
 			>

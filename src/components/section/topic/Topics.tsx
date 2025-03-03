@@ -20,7 +20,14 @@ export const Topics = () => {
 			<h2 className='flex items-center text-lg font-bold text-proyect-white lg:pb-0'>
 				Topics
 			</h2>
-			<div className='w-full overflow-x-hidden' ref={emblaRef}>
+			<div className='w-full overflow-x-hidden lg:hidden' ref={emblaRef}>
+				<div className='flex gap-2 py-2 pl-2'>
+					{topicsList.map((topic, index) => (
+						<TagTopics key={index} label={topic} />
+					))}
+				</div>
+			</div>
+			<div className='hidden w-full overflow-x-hidden lg:block'>
 				<div className='flex gap-2 py-2 pl-2'>
 					{topicsList.map((topic, index) => (
 						<TagTopics key={index} label={topic} />

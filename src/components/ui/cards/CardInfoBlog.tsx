@@ -13,7 +13,7 @@ export const CardInfoBlog = ({
 	return (
 		<div>
 			<div
-				className={`flex w-fit items-center gap-4 bg-proyect-white px-4 pt-4 lg:px-6 lg:pt-6`}
+				className={`z-10 flex w-fit items-center gap-4 bg-proyect-white px-4 pt-4 lg:px-6 lg:pt-6`}
 			>
 				<div className='flex items-center gap-2'>
 					<Image

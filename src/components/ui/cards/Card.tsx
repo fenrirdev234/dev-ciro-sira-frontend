@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CardInfo } from "./CardInfo";
 import { IPost } from "@/models/post.model";
+import Image from "next/image";
 
 type CardType = Pick<
 	IPost,
@@ -17,12 +18,13 @@ export const Card = ({
 }: CardType) => {
 	return (
 		<Link href={`/${postId}`} className='flex-1'>
-			<article
-				className={`flex h-full w-full items-end bg-cover bg-center bg-no-repeat p-6`}
-				style={{
-					backgroundImage: `url(${postImage.url})`,
-				}}
-			>
+			<article className={`relative flex h-full w-full items-end p-6`}>
+				<Image
+					src={postImage.url}
+					alt={postImage.alt}
+					fill={true}
+					className='object-cover object-center'
+				/>
 				<CardInfo
 					isPrincipal={isPrincipal}
 					title={title}
