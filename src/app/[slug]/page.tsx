@@ -12,10 +12,8 @@ import { RelatedPosts } from "@/components/section/relatedPosts/RelatedPosts";
 export default async function BlogPost({
 	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }) {
-	console.log(`${process.env.NEXT_PUBLIC_API_URL}posts?limit=3`);
-	console.log(params);
 	const slug = (await params).slug;
 	const resId = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts/${slug}`);
 	const resAll = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts?limit=3`);
@@ -34,7 +32,7 @@ export default async function BlogPost({
 						postImage={dataId.postImage}
 						author={dataId.author}
 					/>
-					<section className='flex w-full justify-center gap-[30px] px-6 pt-[88px] lg:px-16'>
+					<section className='flex w-full flex-col-reverse items-center justify-center px-6 pt-[88px] lg:gap-[30px] lg:px-16 xl:flex-row xl:items-start'>
 						<SocialSection />
 						<article className='flex w-full max-w-[640px] flex-1 justify-center'>
 							<div className='prose prose-quoteless prose-h1:mb-[12px] prose-h1:text-[19px] prose-h1:font-bold prose-h1:leading-[29px] prose-p:my-[0px] prose-p:pb-[64px] prose-p:text-[16px] prose-p:font-normal prose-p:leading-[27px] prose-blockquote:mb-[64px] prose-blockquote:ml-[16px] prose-blockquote:mt-0 prose-blockquote:border-l-[4px] prose-blockquote:border-proyect-green prose-blockquote:p-[16px] prose-blockquote:text-[19px] prose-blockquote:font-bold prose-blockquote:leading-[29px] prose-img:my-[0px] prose-img:aspect-[109/98] sm:prose-img:aspect-auto lg:prose-h1:text-[21px] lg:prose-h1:leading-[32px] lg:prose-p:leading-[29px] lg:prose-blockquote:ml-[32px] lg:prose-blockquote:p-[24px] lg:prose-blockquote:text-[21px] lg:prose-blockquote:not-italic lg:prose-blockquote:leading-[32px]'>

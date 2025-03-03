@@ -13,13 +13,14 @@ import { Today } from "@/components/section/today/Today";
 export default async function Home({
 	searchParams,
 }: {
-	searchParams?: {
-		page?: string;
-	};
+	searchParams: Promise<{ page?: string }>;
 }) {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts/`);
-	const data: IPostPagination = await res.json();
-	const currentPage = Number(searchParams?.page) || 1;
+	const { page } = await searchParams;
+
+	const resAll = await fetch(
+		`${process.env.NEXT_PUBLIC_API_URL}posts?${page ? `page=${page}` : ""}`,
+	);
+	const postAll: IPostPagination = await resAll.json();
 
 	return (
 		<div className='relative min-h-screen w-full bg-proyect-black'>
@@ -30,8 +31,8 @@ export default async function Home({
 					<Topics />
 
 					<section className='flex gap-[30px]'>
-						<Suspense key={currentPage}>
-							<PrincipalSection posts={data.docs} currentPage={currentPage} />
+						<Suspense key={page}>
+							<PrincipalSection postAll={postAll} />
 						</Suspense>
 						<MostViewList isDark={false} />
 					</section>

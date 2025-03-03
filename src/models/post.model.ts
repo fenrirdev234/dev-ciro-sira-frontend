@@ -58,3 +58,9 @@ export interface PostImage {
 	url: string;
 	alt: string;
 }
+
+export interface BlurHash {
+	hash: string;
+	width: number;
+	height: number;
+}
