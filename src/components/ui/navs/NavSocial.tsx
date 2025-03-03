@@ -1,24 +1,47 @@
+"use client";
+
 import { FacebookIcon } from "../icons/FacebookLogo";
 import { LinkedinIcon } from "../icons/LinkedinLogo";
 import { XLogo } from "../icons/XLogo";
-
-const social = [
-	{ name: "Facebook", url: "", logo: <FacebookIcon /> },
-	{ name: "LinkedIn", url: "", logo: <LinkedinIcon /> },
-	{ name: "X", url: "", logo: <XLogo /> },
-];
+import { MagneticWrapper } from "../wrapper/MagneticWrapper";
 
 export const NavSocial = () => {
 	return (
 		<div>
-			<ul className='flex gap-6'>
-				{social.map((item, index) => (
-					<li key={index} className='transition-colors hover:text-proyect-green'>
-						<a href={item.url} aria-label={`go to ${item.name} site`}>
-							{item.logo}
+			<ul className='flex gap-8'>
+				<li>
+					<MagneticWrapper>
+						<a
+							href={""}
+							aria-label={`go to Facebook site`}
+							className='transition-colors hover:text-proyect-green'
+						>
+							<FacebookIcon />
 						</a>
-					</li>
-				))}
+					</MagneticWrapper>
+				</li>
+				<li>
+					<MagneticWrapper>
+						<a
+							href={""}
+							aria-label={`go to LinkedIn site`}
+							className='transition-colors hover:text-proyect-green'
+						>
+							<LinkedinIcon />
+						</a>
+					</MagneticWrapper>
+				</li>
+				<li>
+					<MagneticWrapper>
+						<a
+							className='transition-colors hover:text-proyect-green'
+							href={""}
+							aria-label={`go to X site`}
+						>
+							<XLogo />
+						</a>
+					</MagneticWrapper>
+				</li>
 			</ul>
 		</div>
 	);
