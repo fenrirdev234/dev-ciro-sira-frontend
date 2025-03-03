@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CardInfo } from "./CardInfo";
 import { IPost } from "@/models/post.model";
 import Image from "next/image";
-
 type CardType = Pick<
 	IPost,
 	"title" | "readingTime" | "postImage" | "category" | "postId" | "postImage"

@@ -19,7 +19,7 @@ type formStateType = "INIT" | "LOAD" | "FINISH";
 
 export const FormModal = () => {
 	const AbortFormFetch = loadAbort();
-
+	const [disabled, setDisabled] = useState(false);
 	const { isOpen, toggleModal } = useModalStore();
 	const [uploadProgresss, setUploadProgress] = useState(0);
 	const [fetchError, setFetchError] = useState(false);
@@ -32,6 +32,7 @@ export const FormModal = () => {
 		formState: { errors },
 	} = useForm<PostFormType>({
 		resolver: zodResolver(postFormSchema),
+		disabled,
 		defaultValues: {
 			title: "",
 			image: undefined,
@@ -49,6 +50,7 @@ export const FormModal = () => {
 		title,
 		image,
 	}) => {
+		setDisabled(true);
 		try {
 			setFormState("LOAD");
 			setFetchError(false);
@@ -82,6 +84,7 @@ export const FormModal = () => {
 			console.log(error);
 			setFetchError(true);
 		} finally {
+			setDisabled(false);
 			reset();
 		}
 	};
@@ -175,6 +178,7 @@ export const FormModal = () => {
 							)}
 
 							<button
+								disabled={disabled}
 								type='submit'
 								className='mt-10 w-full bg-proyect-black px-8 py-4 text-lg font-medium text-proyect-white md:w-fit'
 							>
