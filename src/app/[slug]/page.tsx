@@ -16,7 +16,9 @@ export default async function BlogPost({
 }) {
 	const slug = (await params).slug;
 	const resId = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts/${slug}`);
-	const resAll = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts?limit=3`);
+	const resAll = await fetch(
+		`${process.env.NEXT_PUBLIC_API_URL}posts?limit=3&isDesc=true`,
+	);
 
 	const dataId: IPost = await resId.json();
 	const dataAll: IPostPagination = await resAll.json();
