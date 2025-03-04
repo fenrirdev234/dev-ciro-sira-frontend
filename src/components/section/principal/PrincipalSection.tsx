@@ -57,8 +57,8 @@ export const PrincipalSection = ({ postAll }: { postAll: IPostPagination }) => {
 							/>
 						</motion.div>
 					</div>
-					<div className='flex aspect-[327/378] w-full flex-col gap-8 sm:w-[45%]'>
-						{posts[1] && (
+					{posts[1] && (
+						<div className='flex aspect-[327/378] w-full flex-col gap-8 sm:w-[45%]'>
 							<motion.div
 								initial='initial'
 								whileInView='inView'
@@ -75,26 +75,26 @@ export const PrincipalSection = ({ postAll }: { postAll: IPostPagination }) => {
 									postId={posts[1].postId}
 								/>
 							</motion.div>
-						)}
-						{posts[2] && (
-							<motion.div
-								initial='initial'
-								whileInView='inView'
-								viewport={{ once: true }}
-								variants={myAnimationRigth}
-								className='flex aspect-[327/378] flex-1 sm:aspect-auto'
-							>
-								<Card
-									title={posts[2].title}
-									category={posts[2].category}
-									postImage={posts[2].postImage}
-									readingTime={posts[2].readingTime}
-									isPrincipal={false}
-									postId={posts[2].postId}
-								/>
-							</motion.div>
-						)}
-					</div>
+							{posts[2] && (
+								<motion.div
+									initial='initial'
+									whileInView='inView'
+									viewport={{ once: true }}
+									variants={myAnimationRigth}
+									className='flex aspect-[327/378] flex-1 sm:aspect-auto'
+								>
+									<Card
+										title={posts[2].title}
+										category={posts[2].category}
+										postImage={posts[2].postImage}
+										readingTime={posts[2].readingTime}
+										isPrincipal={false}
+										postId={posts[2].postId}
+									/>
+								</motion.div>
+							)}
+						</div>
+					)}
 				</div>
 			)}
 
@@ -182,8 +182,8 @@ export const PrincipalSection = ({ postAll }: { postAll: IPostPagination }) => {
 							/>
 						</motion.div>
 					</div>
-					<div className='flex aspect-[327/378] w-full flex-col gap-8 sm:w-[45%]'>
-						{posts[7] && (
+					{posts[7] && (
+						<div className='flex aspect-[327/378] w-full flex-col gap-8 sm:w-[45%]'>
 							<motion.div
 								initial='initial'
 								whileInView='inView'
@@ -200,26 +200,26 @@ export const PrincipalSection = ({ postAll }: { postAll: IPostPagination }) => {
 									postId={posts[7].postId}
 								/>
 							</motion.div>
-						)}
-						{posts[8] && (
-							<motion.div
-								initial='initial'
-								whileInView='inView'
-								viewport={{ once: true }}
-								variants={myAnimationRigth}
-								className='flex aspect-[327/378] flex-1 sm:aspect-auto'
-							>
-								<Card
-									title={posts[8].title}
-									category={posts[8].category}
-									postImage={posts[8].postImage}
-									readingTime={posts[8].readingTime}
-									isPrincipal={false}
-									postId={posts[8].postId}
-								/>
-							</motion.div>
-						)}
-					</div>
+							{posts[8] && (
+								<motion.div
+									initial='initial'
+									whileInView='inView'
+									viewport={{ once: true }}
+									variants={myAnimationRigth}
+									className='flex aspect-[327/378] flex-1 sm:aspect-auto'
+								>
+									<Card
+										title={posts[8].title}
+										category={posts[8].category}
+										postImage={posts[8].postImage}
+										readingTime={posts[8].readingTime}
+										isPrincipal={false}
+										postId={posts[8].postId}
+									/>
+								</motion.div>
+							)}
+						</div>
+					)}
 				</div>
 			)}
 
