@@ -12,7 +12,7 @@ export const postFormSchema = z.object({
 		.any()
 		.refine((files) => {
 			return files?.[0]?.size <= FIELDSIZE;
-		}, `Max image size is 10MB.`)
+		}, `Max image size is 4MB.`)
 		.refine(
 			(files) => ACCEPTED_IMAGE_MIME_TYPES.includes(files?.[0]?.type),
 			"Only .jpg, .jpeg, .png and .webp formats are supported.",

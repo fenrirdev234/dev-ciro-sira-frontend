@@ -1,4 +1,4 @@
-export const FIELDSIZE = 10000000;
+export const FIELDSIZE = 4000000;
 
 export const ACCEPTED_IMAGE_MIME_TYPES = [
 	"image/jpeg",
