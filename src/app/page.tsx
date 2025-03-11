@@ -23,7 +23,7 @@ export default async function Home({
 	const postAll: IPostPagination = await resAll.json();
 
 	return (
-		<div className='relative min-h-screen w-full bg-proyect-black'>
+		<div className='relative min-h-screen w-full bg-proyect-black pb-6'>
 			<Header />
 			<main className='flex w-full justify-center'>
 				<div className='bottom-14 w-full max-w-[1440px] px-6 pt-14 lg:px-16 lg:pt-[126px]'>

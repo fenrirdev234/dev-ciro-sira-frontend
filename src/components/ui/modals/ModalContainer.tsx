@@ -21,7 +21,7 @@ export const ModalContainer = ({
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 					onClick={() => toggleModal(false)}
-					className='fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-y-scroll p-5'
+					className='fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-y-hidden p-5'
 				>
 					<motion.div
 						initial={{ scale: 0.4, rotate: "12.5deg" }}
